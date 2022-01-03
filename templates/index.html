@@ -20,44 +20,43 @@
       </div>
       <!-- Add section for Mars News -->
       <div class="row" id="mars-news">
-        <div class="col-md-12">
+        <div class="col-sm-8 col-md-12 col-lg-16">
           <div class="media">
             <div class="media-body">
-              <h2>Latest Mars News</h2>
+              <u>Latest Mars News</u>
               <h4 class="media-heading">{{ mars.news_title }}</h4>
-              <p>{{ mars.news_paragraph }}</p>
+              <blockquote> 
+                <p>{{ mars.news_paragraph }}</p>
+              </blockquote>
             </div>
           </div>
         </div>
       </div>
       <!-- Section for Featured Image and Facts table -->
       <div class="row" id="mars-featured-image">
-        <div class="col-md-8">
-          <h2>Featured Mars Image</h2>
+        <div class="col-sm-2 col-md-4 col-lg-6">
+          <u>Featured Mars Image</u>
           <img
             src="{{mars.featured_image }}"
             class="img-responsive"
             alt="Responsive image"
           />
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-2 col-md-4 col-lg-6">
           <!-- Mars Facts -->
-          <div class="row" id="mars-facts">
-            <h4>Mars Facts</h4>
+          <div class="row table-striped" id="mars-facts">
+            <u>Mars Facts</u>
             {{ mars.facts | safe }}
           </div>
         </div>
       </div>
-
-
-
       <!-- Section for Mars Hemispheres -->
       <div class="row" id="mars-hemisphere">
         <div class="page-header">
-          <h2 class="text-center">Mars Hemispheres</h2>
+          <u class="text-center">Mars Hemispheres</u>
         </div>
         {% for hemisphere in mars.hemisphere %}
-        <div class="col-md-6">
+        <div class="col-sm-2 col-md-4 col-lg-6">
           <div class="thumbnail">
             <img src="{{hemisphere.full_url | default('static/images/error.png', true)}}" alt="...">
             <div class="caption">
